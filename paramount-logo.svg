@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 310" width="100%" height="100%">
+  <defs>
+    <style>
+      .logo-text-para { font-family: 'Plus Jakarta Sans', 'Arial Black', sans-serif; font-weight: 900; font-size: 112px; fill: #090D16; }
+      .logo-text-ount { font-family: 'Plus Jakarta Sans', 'Arial Black', sans-serif; font-weight: 900; font-size: 112px; fill: #090D16; }
+      .logo-subtext { font-family: 'Plus Jakarta Sans', 'Arial', sans-serif; font-weight: 800; font-size: 45px; fill: #090D16; }
+      .mountain-line-outer { stroke: #090D16; stroke-width: 13; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .mountain-line-inner { stroke: #090D16; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .climber { fill: #090D16; }
+    </style>
+  </defs>
+
+  <!-- Left Text: "Para" (starts at x=35) -->
+  <text x="35" y="172" class="logo-text-para">Para</text>
+
+  <!-- Double Mountain Peak "M" Geometry (faithful to original image media__1785656819298.jpg) -->
+  <!-- Outer Mountain Line Ridge forming the M -->
+  <polyline points="375,190 470,75 530,135 610,35 685,190" class="mountain-line-outer" />
+  
+  <!-- Inner Parallel Mountain Line Ridge -->
+  <polyline points="400,190 470,102 530,162 610,65 665,190" class="mountain-line-inner" />
+
+  <!-- Ascending Climber Silhouette on Left Slope of Peak 1 -->
+  <g class="climber" transform="translate(375, 62) scale(0.92)">
+    <circle cx="35" cy="19" r="7" />
+    <path d="M 35,26 L 24,49 L 32,53 L 38,35 Z" />
+    <path d="M 32,31 L 48,21 L 53,25 L 36,36 Z" />
+    <path d="M 28,33 L 14,43 L 17,47 L 30,37 Z" />
+    <path d="M 30,51 L 46,49 L 48,67 L 40,67 L 40,55 Z" />
+    <path d="M 24,49 L 16,71 L 24,75 L 29,55 Z" />
+  </g>
+
+  <!-- Right Text: "ount" (ends at x=905) -->
+  <text x="675" y="172" class="logo-text-ount">ount</text>
+
+  <!-- Horizontal Full Width Divider Line (spans x=35 to x=905) -->
+  <line x1="35" y1="212" x2="905" y2="212" stroke="#090D16" stroke-width="6.5" stroke-linecap="round" />
+
+  <!-- Subtitle Text: "Computer Services & Studies" (aligned x=35 at start and x=905 at end) -->
+  <text x="35" y="262" class="logo-subtext" textLength="870" lengthAdjust="spacingAndGlyphs">Computer Services &amp; Studies</text>
+</svg>
