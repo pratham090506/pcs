@@ -93,11 +93,11 @@
         <img src="assets/paramount-logo.jpg" alt="Paramount Computer Services & Studies" class="brand-logo-img">
       </a>
 
-      <!-- Desktop Navigation Menu -->
+      <!-- Desktop Navigation Menu (Color Changes on Section Scroll) -->
       <ul class="nav-menu">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#services" class="nav-link">Comprehensive Works &amp; Parts</a></li>
-        <li><a href="#inquiry" class="nav-link">Book Service / Inquiry</a></li>
+        <li><a href="#hero" class="nav-link nav-link-hero active" id="navLinkHero">Home</a></li>
+        <li><a href="#services" class="nav-link nav-link-services" id="navLinkServices">Comprehensive Works &amp; Parts</a></li>
+        <li><a href="#inquiry" class="nav-link nav-link-inquiry" id="navLinkInquiry">Book Service / Inquiry</a></li>
       </ul>
 
       <!-- Header Action Buttons -->
@@ -113,8 +113,15 @@
       </div>
     </div>
 
-    <!-- Mobile Menu with 3 Direct Option Cards -->
+    <!-- Fullscreen Mobile Navigation Menu Overlay (100% Screen, All 3 Options Visible with Zero Scroll) -->
     <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <div class="mobile-drawer-topbar">
+        <img src="assets/paramount-logo.jpg" alt="Paramount Logo" class="mobile-drawer-logo">
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
       <div class="mobile-nav-items-group">
         <!-- 1. Home (Blue Solid Card) -->
         <a href="#hero" class="mobile-nav-card card-color-blue" onclick="jumpToSection('#hero', event)">
@@ -123,7 +130,7 @@
           </div>
           <div class="mobile-nav-text">
             <span class="mobile-nav-label">Home</span>
-            <span class="mobile-nav-sub">Go to Welcome &amp; Overview</span>
+            <span class="mobile-nav-sub">Main Welcome &amp; Hardware Overview</span>
           </div>
           <i data-lucide="arrow-right" class="mobile-nav-arrow"></i>
         </a>
@@ -135,7 +142,7 @@
           </div>
           <div class="mobile-nav-text">
             <span class="mobile-nav-label">Comprehensive Works &amp; Parts</span>
-            <span class="mobile-nav-sub">Go to Hardware, CCTV &amp; Spare Parts</span>
+            <span class="mobile-nav-sub">PCs, CCTV, Printers, Biometrics &amp; Parts</span>
           </div>
           <i data-lucide="arrow-right" class="mobile-nav-arrow"></i>
         </a>
@@ -147,9 +154,18 @@
           </div>
           <div class="mobile-nav-text">
             <span class="mobile-nav-label">Book Service</span>
-            <span class="mobile-nav-sub">Go to Server Desk Inquiry Form</span>
+            <span class="mobile-nav-sub">Server Desk Inquiry &amp; WhatsApp Booking</span>
           </div>
           <i data-lucide="arrow-right" class="mobile-nav-arrow"></i>
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer-actions">
+        <a href="tel:9227100794" class="btn-drawer-action call-action">
+          <i data-lucide="phone"></i> <span>Call: 9227100794</span>
+        </a>
+        <a href="https://wa.me/919227100794?text=Hi%20Paramount%20Computer%20Services,%20I%20want%20to%20inquire%20about%20your%20IT%20services." target="_blank" class="btn-drawer-action wa-action">
+          <i data-lucide="message-square"></i> <span>WhatsApp Chat</span>
         </a>
       </div>
     </div>

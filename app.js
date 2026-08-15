@@ -144,6 +144,41 @@ function initHeaderAndMobileNav() {
       jumpToSection(targetId, e);
     });
   });
+
+  // Desktop ScrollSpy with section color changes on scroll
+  const linkHero = document.getElementById('navLinkHero');
+  const linkServices = document.getElementById('navLinkServices');
+  const linkInquiry = document.getElementById('navLinkInquiry');
+
+  function updateDesktopActiveNav() {
+    const scrollPos = window.scrollY + 120;
+    const heroSec = document.getElementById('hero');
+    const servicesSec = document.getElementById('services');
+    const inquirySec = document.getElementById('inquiry');
+
+    if (!heroSec || !servicesSec || !inquirySec) return;
+
+    const heroTop = heroSec.offsetTop;
+    const servicesTop = servicesSec.offsetTop;
+    const inquiryTop = inquirySec.offsetTop;
+
+    [linkHero, linkServices, linkInquiry].forEach(link => {
+      if (link) {
+        link.classList.remove('active', 'active-hero', 'active-services', 'active-inquiry');
+      }
+    });
+
+    if (scrollPos >= inquiryTop - 150) {
+      if (linkInquiry) linkInquiry.classList.add('active-inquiry');
+    } else if (scrollPos >= servicesTop - 150) {
+      if (linkServices) linkServices.classList.add('active-services');
+    } else {
+      if (linkHero) linkHero.classList.add('active-hero');
+    }
+  }
+
+  window.addEventListener('scroll', updateDesktopActiveNav, { passive: true });
+  updateDesktopActiveNav();
 }
 
 function jumpToSection(targetId, e) {
