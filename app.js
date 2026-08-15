@@ -112,8 +112,9 @@ function initPreloader() {
 function initHeaderAndMobileNav() {
   const header = document.getElementById('siteHeader');
   const toggleBtn = document.getElementById('mobileNavToggle');
+  const closeBtn = document.getElementById('mobileDrawerClose');
   const navDrawer = document.getElementById('mobileNavDrawer');
-  const navLinks = document.querySelectorAll('.mobile-nav-drawer .nav-link');
+  const navCards = document.querySelectorAll('.mobile-nav-card');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -126,14 +127,25 @@ function initHeaderAndMobileNav() {
   if (toggleBtn && navDrawer) {
     toggleBtn.addEventListener('click', () => {
       navDrawer.classList.toggle('active');
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navDrawer.classList.remove('active');
-      });
+      if (window.lucide) lucide.createIcons();
     });
   }
+
+  if (closeBtn && navDrawer) {
+    closeBtn.addEventListener('click', () => {
+      navDrawer.classList.remove('active');
+    });
+  }
+
+  navCards.forEach(card => {
+    card.addEventListener('click', () => {
+      navCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      if (navDrawer) {
+        navDrawer.classList.remove('active');
+      }
+    });
+  });
 }
 
 /* ==========================================================================
@@ -209,6 +221,28 @@ function initHeroSliderAnd3DTilt() {
     });
   });
 
+  // Touch Swipe Gestures on Hero 3D Slider for Mobile
+  const heroContainer = document.getElementById('heroSliderContainer');
+  if (heroContainer) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 45) {
+        nextSlide();
+        startAutoSlide();
+      } else if (touchEndX - touchStartX > 45) {
+        prevSlide();
+        startAutoSlide();
+      }
+    }, { passive: true });
+  }
+
   startAutoSlide();
 }
 
@@ -216,6 +250,8 @@ function initHeroSliderAnd3DTilt() {
    5. REAL-TIME 3D PERSPECTIVE TILT ON ALL SERVICE CARDS & CENTERED STATS CARD
    ========================================================================== */
 function init3DTiltOnAllCards() {
+  if (window.matchMedia('(hover: none)').matches) return; // Skip on mobile touch screens for smooth scrolling
+
   const tiltElements = document.querySelectorAll('.service-card-3d, .stats-card-3d-centered, #heroTiltCard');
 
   tiltElements.forEach(card => {
@@ -293,12 +329,29 @@ function initCardMiniSliders() {
       });
     }
 
-    dots.forEach((dot, index) => {
+    dots.forEach((dot, idx) => {
       dot.addEventListener('click', (e) => {
         e.stopPropagation();
-        goToSlide(index);
+        goToSlide(idx);
       });
     });
+
+    // Touch Swipe on Mini Sliders for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 40) {
+        nextMiniSlide();
+      } else if (touchEndX - touchStartX > 40) {
+        prevMiniSlide();
+      }
+    }, { passive: true });
   });
 }
 

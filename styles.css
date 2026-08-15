@@ -390,23 +390,206 @@ a {
   inset: 0;
   top: 76px;
   background: #FFFFFF;
-  z-index: 999;
-  padding: 30px 24px;
+  z-index: 9999;
+  padding: 24px 20px 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   transform: translateX(100%);
   transition: transform var(--transition-normal);
+  overflow-y: auto;
+  box-shadow: -10px 0 30px rgba(9, 13, 22, 0.15);
 }
 
 .mobile-nav-drawer.active {
   transform: translateX(0%);
 }
 
-.mobile-nav-drawer .nav-link {
-  font-size: 1.2rem;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--bg-subtle);
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--bg-subtle);
+}
+
+.mobile-drawer-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+}
+
+.mobile-drawer-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.mobile-drawer-close:hover {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+}
+
+.mobile-nav-items-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 3 Distinct Colorful Option Cards */
+.mobile-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
+  border: 1.5px solid transparent;
+}
+
+.mobile-nav-card:active {
+  transform: scale(0.98);
+}
+
+/* 1. Blue Card (Home) */
+.card-color-blue {
+  background: #EFF6FF;
+  border-color: rgba(30, 58, 138, 0.2);
+}
+.card-color-blue:hover, .card-color-blue.active {
+  border-color: #1E3A8A;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.15);
+}
+.icon-blue {
+  background: #1E3A8A;
+  color: #FFFFFF;
+}
+.card-color-blue .mobile-nav-label {
+  color: #1E3A8A;
+}
+
+/* 2. Amber / Orange Card (Comprehensive Works) */
+.card-color-amber {
+  background: #FFFBEB;
+  border-color: rgba(217, 119, 6, 0.25);
+}
+.card-color-amber:hover, .card-color-amber.active {
+  border-color: #D97706;
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.18);
+}
+.icon-amber {
+  background: #D97706;
+  color: #FFFFFF;
+}
+.card-color-amber .mobile-nav-label {
+  color: #B45309;
+}
+
+/* 3. Green / Emerald Card (Book Service / Inquiry) */
+.card-color-green {
+  background: #ECFDF5;
+  border-color: rgba(5, 150, 105, 0.25);
+}
+.card-color-green:hover, .card-color-green.active {
+  border-color: #059669;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.18);
+}
+.icon-green {
+  background: #059669;
+  color: #FFFFFF;
+}
+.card-color-green .mobile-nav-label {
+  color: #047857;
+}
+
+.mobile-nav-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-nav-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mobile-nav-label {
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.mobile-nav-sub {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.mobile-nav-arrow {
+  color: #94A3B8;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.mobile-nav-card:hover .mobile-nav-arrow {
+  transform: translateX(4px);
+  color: var(--text-primary);
+}
+
+.mobile-drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 18px;
+  border-top: 1.5px solid var(--bg-subtle);
+}
+
+.btn-mobile-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--gradient-tech);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.btn-mobile-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -1277,6 +1460,63 @@ a {
   visibility: visible;
 }
 
+/* ==========================================================================
+   9. MOBILE BOTTOM QUICK ACTION STICKY DOCK
+   ========================================================================== */
+.mobile-bottom-quick-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  padding: 10px 16px 14px 16px;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 -4px 20px rgba(9, 13, 22, 0.1);
+  z-index: 9990;
+  gap: 10px;
+}
+
+.mobile-dock-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.mobile-dock-btn:active {
+  transform: scale(0.96);
+}
+
+.dock-call-btn {
+  background: var(--gradient-tech);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+}
+
+.dock-whatsapp-btn {
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+.dock-inquire-btn {
+  background: var(--bg-subtle);
+  color: var(--brand-blue);
+  border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE BREAKPOINTS & MOBILE PRESENTATION OPTIMIZATION
+   ========================================================================== */
 @media (max-width: 1024px) {
   .hero-section { grid-template-columns: 1fr; gap: 40px; }
   .stats-card-3d-centered { grid-template-columns: 1fr; gap: 20px; }
@@ -1286,10 +1526,203 @@ a {
 
 @media (max-width: 768px) {
   .nav-menu { display: none; }
-  .mobile-nav-toggle { display: block; }
-  .services-3d-grid { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .form-group-full { grid-column: span 1; }
-  .footer-container { grid-template-columns: 1fr; }
-  .open-services-selector-grid { grid-template-columns: 1fr; }
+  .mobile-nav-toggle { 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--bg-subtle);
+    border: none;
+    color: var(--text-primary);
+  }
+  .mobile-bottom-quick-bar { display: flex; }
+  .floating-whatsapp-widget { display: none; } /* Replaced by bottom dock on mobile for cleaner screen */
+
+  /* Header scaling */
+  .header-container {
+    padding: 8px 16px;
+  }
+  .brand-logo-link {
+    max-width: 220px;
+  }
+  .brand-logo-img {
+    height: 48px;
+    width: auto;
+  }
+  .btn-header-whatsapp span {
+    display: none;
+  }
+  .btn-header-whatsapp {
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  /* Hero Section Mobile scaling */
+  .hero-section {
+    padding: 24px 16px 36px 16px;
+    gap: 28px;
+  }
+  .hero-badge-experience {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(1.85rem, 5.5vw, 2.4rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .btn-primary-tech, .btn-secondary-outline {
+    width: 100%;
+    padding: 14px 20px;
+  }
+  .hero-owner-contact-bar {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    padding: 12px 14px;
+  }
+  .slider-media-container {
+    height: 240px;
+  }
+  .slider-service-title {
+    font-size: 1.05rem;
+  }
+  .slider-service-sub {
+    font-size: 0.75rem;
+  }
+
+  /* Centered Stats Banner Mobile Layout */
+  .stats-banner-wrapper {
+    padding: 0 16px;
+    margin-bottom: 36px;
+  }
+  .stats-card-3d-centered {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px 8px;
+    gap: 6px;
+  }
+  .stat-centered-number {
+    font-size: 1.55rem;
+  }
+  .stat-centered-label {
+    font-size: 0.7rem;
+  }
+
+  /* Horizontally Scrollable Native-App Style Filter Bar */
+  .filter-bar-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 4px 16px 14px 16px;
+    margin: 0 -16px 24px -16px;
+    scrollbar-width: none;
+  }
+  .filter-bar-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* Services Grid & Cards */
+  .section-wrapper {
+    padding: 24px 16px 60px 16px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-description {
+    font-size: 0.95rem;
+  }
+  .services-3d-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .service-card-3d {
+    padding: 18px;
+    border-radius: 16px;
+  }
+  .card-mini-slider-wrapper {
+    height: 185px;
+    margin-bottom: 16px;
+  }
+  .service-card-title {
+    font-size: 1.2rem;
+  }
+  .btn-service-book {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Inquiry Form on Mobile */
+  .contact-section-wrap {
+    padding: 50px 16px 100px 16px;
+  }
+  .inquiry-form-card {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-group-full {
+    grid-column: span 1;
+  }
+  .form-input, .form-textarea {
+    font-size: 16px; /* Prevents iOS auto-zoom */
+    padding: 12px 14px;
+  }
+  .open-services-selector-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .service-option-card {
+    padding: 12px 14px;
+  }
+  .btn-submit-whatsapp {
+    padding: 16px 18px;
+    font-size: 0.98rem;
+  }
+
+  /* Footer on Mobile */
+  .site-footer {
+    padding: 40px 16px 90px 16px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Floating background badges scale on mobile */
+  .moving-it-image-badge {
+    width: 100px;
+    height: 70px;
+    opacity: 0.5;
+  }
 }
