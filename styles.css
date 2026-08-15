@@ -386,86 +386,60 @@ a {
 }
 
 .mobile-nav-drawer {
-  position: fixed;
-  inset: 0;
-  top: 76px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   background: #FFFFFF;
   z-index: 9999;
-  padding: 24px 20px 40px 20px;
-  display: flex;
+  padding: 14px 16px 18px 16px;
+  display: none;
   flex-direction: column;
-  gap: 18px;
-  transform: translateX(100%);
-  transition: transform var(--transition-normal);
-  overflow-y: auto;
-  box-shadow: -10px 0 30px rgba(9, 13, 22, 0.15);
+  gap: 10px;
+  border-bottom: 2px solid #E2E8F0;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 20px 40px rgba(9, 13, 22, 0.22);
 }
 
 .mobile-nav-drawer.active {
-  transform: translateX(0%);
-}
-
-.mobile-drawer-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 12px;
-  border-bottom: 1.5px solid var(--bg-subtle);
+  animation: dropMenuAnim 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.mobile-drawer-title {
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--text-muted);
-}
-
-.mobile-drawer-close {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--bg-subtle);
-  border: none;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-fast);
-}
-
-.mobile-drawer-close:hover {
-  background: var(--brand-blue);
-  color: #FFFFFF;
+@keyframes dropMenuAnim {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .mobile-nav-items-group {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
+  width: 100%;
 }
 
-/* 3 Distinct Vibrant Colorful Option Cards */
+/* 3 Distinct Vibrant Compact Option Cards */
 .mobile-nav-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  border-radius: var(--radius-lg);
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
   text-decoration: none;
-  transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
-  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
 }
 
 .mobile-nav-card:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 /* 1. Royal Blue Card (Home) */
 .card-color-blue {
   background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
   color: #FFFFFF;
-  box-shadow: 0 8px 22px rgba(30, 58, 138, 0.35);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.3);
 }
 .card-color-blue .mobile-nav-icon {
   background: rgba(255, 255, 255, 0.22);
@@ -613,6 +587,7 @@ a {
   gap: 50px;
   align-items: center;
   z-index: 1;
+  scroll-margin-top: 80px;
 }
 
 .hero-badge-experience {
@@ -902,6 +877,7 @@ a {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  scroll-margin-top: 80px;
 }
 
 .section-header-center {
@@ -1201,6 +1177,7 @@ a {
   background: transparent;
   border-top: 1px solid rgba(226, 232, 240, 0.8);
   padding: 90px 24px;
+  scroll-margin-top: 80px;
 }
 
 .contact-container {
