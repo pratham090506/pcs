@@ -445,82 +445,91 @@ a {
   gap: 14px;
 }
 
-/* 3 Distinct Colorful Option Cards */
+/* 3 Distinct Vibrant Colorful Option Cards */
 .mobile-nav-card {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   border-radius: var(--radius-lg);
   text-decoration: none;
   transition: transform var(--transition-bounce), box-shadow var(--transition-fast);
-  border: 1.5px solid transparent;
+  box-shadow: var(--shadow-md);
 }
 
 .mobile-nav-card:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* 1. Blue Card (Home) */
+/* 1. Royal Blue Card (Home) */
 .card-color-blue {
-  background: #EFF6FF;
-  border-color: rgba(30, 58, 138, 0.2);
+  background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(30, 58, 138, 0.35);
 }
-.card-color-blue:hover, .card-color-blue.active {
-  border-color: #1E3A8A;
-  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.15);
-}
-.icon-blue {
-  background: #1E3A8A;
+.card-color-blue .mobile-nav-icon {
+  background: rgba(255, 255, 255, 0.22);
   color: #FFFFFF;
 }
 .card-color-blue .mobile-nav-label {
-  color: #1E3A8A;
+  color: #FFFFFF;
+}
+.card-color-blue .mobile-nav-sub {
+  color: #DBEAFE;
+}
+.card-color-blue .mobile-nav-arrow {
+  color: #FFFFFF;
 }
 
-/* 2. Amber / Orange Card (Comprehensive Works) */
+/* 2. Rich Amber / Orange Card (Comprehensive Works & Parts) */
 .card-color-amber {
-  background: #FFFBEB;
-  border-color: rgba(217, 119, 6, 0.25);
+  background: linear-gradient(135deg, #D97706 0%, #EA580C 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(217, 119, 6, 0.35);
 }
-.card-color-amber:hover, .card-color-amber.active {
-  border-color: #D97706;
-  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.18);
-}
-.icon-amber {
-  background: #D97706;
+.card-color-amber .mobile-nav-icon {
+  background: rgba(255, 255, 255, 0.22);
   color: #FFFFFF;
 }
 .card-color-amber .mobile-nav-label {
-  color: #B45309;
+  color: #FFFFFF;
+}
+.card-color-amber .mobile-nav-sub {
+  color: #FEF3C7;
+}
+.card-color-amber .mobile-nav-arrow {
+  color: #FFFFFF;
 }
 
-/* 3. Green / Emerald Card (Book Service / Inquiry) */
+/* 3. Vibrant Emerald Green Card (Book Service / Inquiry) */
 .card-color-green {
-  background: #ECFDF5;
-  border-color: rgba(5, 150, 105, 0.25);
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(5, 150, 105, 0.35);
 }
-.card-color-green:hover, .card-color-green.active {
-  border-color: #059669;
-  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.18);
-}
-.icon-green {
-  background: #059669;
+.card-color-green .mobile-nav-icon {
+  background: rgba(255, 255, 255, 0.22);
   color: #FFFFFF;
 }
 .card-color-green .mobile-nav-label {
-  color: #047857;
+  color: #FFFFFF;
+}
+.card-color-green .mobile-nav-sub {
+  color: #D1FAE5;
+}
+.card-color-green .mobile-nav-arrow {
+  color: #FFFFFF;
 }
 
 .mobile-nav-icon {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .mobile-nav-text {
@@ -530,16 +539,15 @@ a {
 }
 
 .mobile-nav-label {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 900;
   line-height: 1.2;
 }
 
 .mobile-nav-sub {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  margin-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 3px;
 }
 
 .mobile-nav-arrow {
@@ -913,6 +921,24 @@ a {
   padding: 6px 16px;
   border-radius: var(--radius-full);
   margin-bottom: 14px;
+}
+
+.tag-blue {
+  color: #1E3A8A !important;
+  background: #EFF6FF !important;
+  border: 1.5px solid rgba(30, 58, 138, 0.25);
+}
+
+.tag-amber {
+  color: #B45309 !important;
+  background: #FFFBEB !important;
+  border: 1.5px solid rgba(217, 119, 6, 0.3);
+}
+
+.tag-green {
+  color: #047857 !important;
+  background: #ECFDF5 !important;
+  border: 1.5px solid rgba(5, 150, 105, 0.3);
 }
 
 .section-title {
