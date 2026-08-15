@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260815b">
 </head>
 <body>
 
@@ -115,16 +115,9 @@
 
     <!-- Mobile Menu with 3 Direct Option Cards -->
     <div class="mobile-nav-drawer" id="mobileNavDrawer">
-      <div class="mobile-drawer-header">
-        <span class="mobile-drawer-title">Choose Section</span>
-        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
-          <i data-lucide="x"></i>
-        </button>
-      </div>
-
       <div class="mobile-nav-items-group">
         <!-- 1. Home (Blue Solid Card) -->
-        <a href="#hero" class="mobile-nav-card card-color-blue">
+        <a href="#hero" class="mobile-nav-card card-color-blue" onclick="jumpToSection('#hero', event)">
           <div class="mobile-nav-icon icon-blue">
             <i data-lucide="home"></i>
           </div>
@@ -136,7 +129,7 @@
         </a>
 
         <!-- 2. Comprehensive Works & Parts (Amber/Orange Solid Card) -->
-        <a href="#services" class="mobile-nav-card card-color-amber">
+        <a href="#services" class="mobile-nav-card card-color-amber" onclick="jumpToSection('#services', event)">
           <div class="mobile-nav-icon icon-amber">
             <i data-lucide="layers"></i>
           </div>
@@ -148,7 +141,7 @@
         </a>
 
         <!-- 3. Book Service (Emerald Green Solid Card) -->
-        <a href="#inquiry" class="mobile-nav-card card-color-green">
+        <a href="#inquiry" class="mobile-nav-card card-color-green" onclick="jumpToSection('#inquiry', event)">
           <div class="mobile-nav-icon icon-green">
             <i data-lucide="calendar-check"></i>
           </div>
@@ -953,7 +946,7 @@
   </button>
 
   <!-- JavaScript App Logic -->
-  <script src="app.js"></script>
+  <script src="app.js?v=20260815b"></script>
   <script>
     lucide.createIcons();
   </script>

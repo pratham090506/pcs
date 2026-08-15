@@ -141,28 +141,33 @@ function initHeaderAndMobileNav() {
     card.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = card.getAttribute('href');
-      
-      // Close drawer immediately
-      if (navDrawer) {
-        navDrawer.classList.remove('active');
-      }
-
-      // Smooth scroll to the target section
-      if (targetId && targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const headerHeight = header ? header.offsetHeight : 70;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }
+      jumpToSection(targetId, e);
     });
   });
 }
+
+function jumpToSection(targetId, e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const navDrawer = document.getElementById('mobileNavDrawer');
+  if (navDrawer) {
+    navDrawer.classList.remove('active');
+  }
+
+  if (targetId && targetId.startsWith('#')) {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const header = document.getElementById('siteHeader');
+      const headerHeight = header ? header.offsetHeight : 70;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+}
+window.jumpToSection = jumpToSection;
 
 /* ==========================================================================
    4. HERO 3D SERVICE CAROUSEL / SLIDER
