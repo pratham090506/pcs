@@ -123,9 +123,9 @@
       </div>
 
       <div class="mobile-nav-items-group">
-        <!-- 1. Home (Blue Solid Card) -->
-        <a href="#hero" class="mobile-nav-card card-color-blue" onclick="jumpToSection('#hero', event)">
-          <div class="mobile-nav-icon icon-blue">
+        <!-- 1. Home (Amber/Orange Solid Card - Swapped) -->
+        <a href="#hero" class="mobile-nav-card card-color-amber" onclick="jumpToSection('#hero', event)">
+          <div class="mobile-nav-icon icon-amber">
             <i data-lucide="home"></i>
           </div>
           <div class="mobile-nav-text">
@@ -135,9 +135,9 @@
           <i data-lucide="arrow-right" class="mobile-nav-arrow"></i>
         </a>
 
-        <!-- 2. Comprehensive Works & Parts (Amber/Orange Solid Card) -->
-        <a href="#services" class="mobile-nav-card card-color-amber" onclick="jumpToSection('#services', event)">
-          <div class="mobile-nav-icon icon-amber">
+        <!-- 2. Comprehensive Works & Parts (Blue Solid Card - Swapped) -->
+        <a href="#services" class="mobile-nav-card card-color-blue" onclick="jumpToSection('#services', event)">
+          <div class="mobile-nav-icon icon-blue">
             <i data-lucide="layers"></i>
           </div>
           <div class="mobile-nav-text">
@@ -154,7 +154,7 @@
           </div>
           <div class="mobile-nav-text">
             <span class="mobile-nav-label">Book Service</span>
-            <span class="mobile-nav-sub">Server Desk Inquiry &amp; WhatsApp Booking</span>
+            <span class="mobile-nav-sub">Service Desk Inquiry &amp; WhatsApp Booking</span>
           </div>
           <i data-lucide="arrow-right" class="mobile-nav-arrow"></i>
         </a>
@@ -181,13 +181,19 @@
         <span>20+ Years of IT &amp; Hardware Excellence</span>
       </div>
 
-      <h1 class="hero-title">
-        Complete Solutions for <span class="highlight-blue">Computer, Network &amp; CCTV</span>
-      </h1>
+      <!-- Hero Title Card Box (Left-Aligned, No Justify) -->
+      <div class="hero-title-card-box">
+        <h1 class="hero-title">
+          Complete Solutions for <span class="highlight-blue">Computer, Network &amp; CCTV</span>
+        </h1>
+      </div>
 
-      <p class="hero-subtitle">
-        Sales, installation, AMC maintenance, and repairs for Branded &amp; Custom Computers, Laptops, Printers, CCTV Surveillance, Networking, Biometrics, Security Systems, Telecommunication, and Genuine Spare Parts.
-      </p>
+      <!-- Hero Subtitle Card Box (Justified) -->
+      <div class="hero-desc-card-box">
+        <p class="hero-subtitle">
+          Sales, installation, AMC maintenance, and repairs for Branded &amp; Custom Computers, Laptops, Printers, CCTV Surveillance, Networking, Biometrics, Security Systems, Telecommunication, and Genuine Spare Parts.
+        </p>
+      </div>
 
       <div class="hero-cta-group">
         <a href="#inquiry" class="btn-primary-tech">
@@ -200,30 +206,30 @@
         </a>
       </div>
 
-      <!-- Owner Name & Phone Number directly under CTA Buttons -->
+      <!-- Owner Name & Phone Number directly under CTA Buttons (Proprietor word removed) -->
       <div class="hero-owner-contact-bar">
         <i data-lucide="user-check"></i>
-        <span>Proprietor: <strong>Umang Bhatt</strong> | Call / WhatsApp: <a href="https://wa.me/919227100794?text=Hi%20Umang%20Bhatt,%20I%20have%20an%20IT%20inquiry." target="_blank">+91 9227100794</a></span>
+        <span><strong>Umang Bhatt</strong> | Call / WhatsApp: <a href="https://wa.me/919227100794?text=Hi%20Umang%20Bhatt,%20I%20have%20an%20IT%20inquiry." target="_blank">+91 9227100794</a></span>
       </div>
     </div>
 
-    <!-- 3D Service Carousel / Auto Slider -->
+    <!-- 3D Service Carousel / Auto Slider (11 Slides with 30, 31 added & 33 in place of 13) -->
     <div class="hero-slider-wrap">
       <div class="hero-card-3d-slider" id="heroTiltCard">
         
         <div class="slider-media-container" id="heroSliderContainer">
-          <!-- Slide 1: Enterprise Server & Desktop PCs -->
+          <!-- Slide 1: Server PC (29.jpg) -->
           <div class="slider-slide active" data-index="0">
-            <img src="assets/29.jpg" alt="Computer and Laptop">
+            <img src="assets/29.jpg" alt="Server PC">
             <div class="slider-caption-overlay">
               <div>
-                <div class="slider-service-title">Computer and Laptop</div>
-                <div class="slider-service-sub">Selling, Installation &amp; Custom Workstation Builds</div>
+                <div class="slider-service-title">Server PC</div>
+                <div class="slider-service-sub">Enterprise Server Towers &amp; Workstations</div>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2: Printing Solutions -->
+          <!-- Slide 2: Printing Solutions (24.jpg) -->
           <div class="slider-slide" data-index="1">
             <img src="assets/24.jpg" alt="Printing Solutions">
             <div class="slider-caption-overlay">
@@ -234,9 +240,9 @@
             </div>
           </div>
 
-          <!-- Slide 3: CCTV Solutions -->
+          <!-- Slide 3: CCTV Solutions (33.jpg replacing 13) -->
           <div class="slider-slide" data-index="2">
-            <img src="assets/13.jpg" alt="CCTV Solutions">
+            <img src="assets/33.jpg" alt="CCTV Solutions">
             <div class="slider-caption-overlay">
               <div>
                 <div class="slider-service-title">CCTV Solutions</div>
@@ -245,7 +251,7 @@
             </div>
           </div>
 
-          <!-- Slide 4: Telecommunication Solutions -->
+          <!-- Slide 4: Telecommunication Solutions (16.jpg) -->
           <div class="slider-slide" data-index="3">
             <img src="assets/16.jpg" alt="Telecommunication Solutions">
             <div class="slider-caption-overlay">
@@ -256,7 +262,7 @@
             </div>
           </div>
 
-          <!-- Slide 5: Network & WiFi Solutions -->
+          <!-- Slide 5: Network & WiFi Solutions (5.jpg) -->
           <div class="slider-slide" data-index="4">
             <img src="assets/5.jpg" alt="Network and WiFi Solutions">
             <div class="slider-caption-overlay">
@@ -267,7 +273,7 @@
             </div>
           </div>
 
-          <!-- Slide 6: Genuine Parts & Peripherals -->
+          <!-- Slide 6: Genuine Parts & Peripherals (22.jpg) -->
           <div class="slider-slide" data-index="5">
             <img src="assets/22.jpg" alt="Store for Genuine Parts">
             <div class="slider-caption-overlay">
@@ -278,7 +284,7 @@
             </div>
           </div>
 
-          <!-- Slide 7: AMC & Repairing Solutions -->
+          <!-- Slide 7: AMC & Repairing Solutions (19.jpg) -->
           <div class="slider-slide" data-index="6">
             <img src="assets/19.jpg" alt="AMC and Repairing Solutions">
             <div class="slider-caption-overlay">
@@ -289,7 +295,7 @@
             </div>
           </div>
 
-          <!-- Slide 8: Security & Cloud Solutions -->
+          <!-- Slide 8: Security & Cloud Solutions (18.jpg) -->
           <div class="slider-slide" data-index="7">
             <img src="assets/18.jpg" alt="Security and Cloud Solutions">
             <div class="slider-caption-overlay">
@@ -300,13 +306,35 @@
             </div>
           </div>
 
-          <!-- Slide 9: Biometric Solutions -->
+          <!-- Slide 9: Biometric Solutions (8.jpg) -->
           <div class="slider-slide" data-index="8">
             <img src="assets/8.jpg" alt="Biometric Solutions">
             <div class="slider-caption-overlay">
               <div>
                 <div class="slider-service-title">Biometric Solutions</div>
                 <div class="slider-service-sub">Fingerprint, Face Scanner &amp; Door Lock Machines</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 10: Hardware & Peripherals (30.jpg) -->
+          <div class="slider-slide" data-index="9">
+            <img src="assets/30.jpg" alt="Hardware & Peripherals">
+            <div class="slider-caption-overlay">
+              <div>
+                <div class="slider-service-title">Hardware &amp; Peripherals</div>
+                <div class="slider-service-sub">Genuine Components, Motherboards &amp; Spares</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 11: Turnkey Infrastructure Setup (31.jpg) -->
+          <div class="slider-slide" data-index="10">
+            <img src="assets/31.jpg" alt="Turnkey Infrastructure Setup">
+            <div class="slider-caption-overlay">
+              <div>
+                <div class="slider-service-title">Complete Office Setup</div>
+                <div class="slider-service-sub">Turnkey IT Systems &amp; Network Infrastructure</div>
               </div>
             </div>
           </div>
@@ -319,7 +347,7 @@
           <button class="slider-arrow-btn" id="nextSlideBtn" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
         </div>
 
-        <!-- Slider Progress Indicators (9 Dots) -->
+        <!-- Slider Progress Indicators (11 Dots) -->
         <div class="slider-dots-row" id="sliderDots">
           <span class="slider-dot active" data-index="0"></span>
           <span class="slider-dot" data-index="1"></span>
@@ -330,6 +358,8 @@
           <span class="slider-dot" data-index="6"></span>
           <span class="slider-dot" data-index="7"></span>
           <span class="slider-dot" data-index="8"></span>
+          <span class="slider-dot" data-index="9"></span>
+          <span class="slider-dot" data-index="10"></span>
         </div>
 
       </div>
@@ -470,7 +500,7 @@
           
           <div class="card-mini-slide active"><img src="assets/4.jpg" alt="CCTV Camera Surveillance"></div>
           <div class="card-mini-slide"><img src="assets/11.jpg" alt="360° Rotate PTZ Camera"></div>
-          <div class="card-mini-slide"><img src="assets/13.jpg" alt="HD Night Vision Infrared Camera"></div>
+          <div class="card-mini-slide"><img src="assets/33.jpg" alt="HD Night Vision Infrared Camera"></div>
           
           <div class="card-mini-dots">
             <span class="card-mini-dot active"></span>
@@ -744,11 +774,14 @@
       
       <!-- Contact Info Card -->
       <div class="contact-info-card">
-        <span class="section-tag tag-green">Direct Communication</span>
-        <h2 class="section-title">Connect to our Server Desk</h2>
-        <p class="section-description" style="margin-bottom: 30px;">
-          Select any service or spare part you need, or get in touch directly via call, WhatsApp, or email for instant support.
-        </p>
+        <!-- Service Desk Intro Block -->
+        <div class="service-desk-intro-box">
+          <span class="section-tag tag-green">Direct Communication</span>
+          <h2 class="section-title">Connect to our Service Desk</h2>
+          <p class="section-description">
+            Select any service or spare part you need, or get in touch directly via call, WhatsApp, or email for instant support.
+          </p>
+        </div>
 
         <!-- Owner Card -->
         <div class="contact-owner-badge">
@@ -921,7 +954,7 @@
 
       <div>
         <h4 style="color: #FFFFFF; font-size: 1rem; font-weight: 800; margin-bottom: 16px;">Owner &amp; Contact</h4>
-        <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong style="color: #FFFFFF;">Proprietor:</strong> Umang Bhatt</p>
+        <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong style="color: #FFFFFF;">Umang Bhatt</strong></p>
         <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong style="color: #FFFFFF;">Phone:</strong> +91 9227100794</p>
         <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong style="color: #FFFFFF;">Email:</strong> pcservices123@gmail.com</p>
       </div>
